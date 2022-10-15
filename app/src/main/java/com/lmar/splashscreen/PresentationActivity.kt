@@ -1,6 +1,8 @@
 package com.lmar.splashscreen
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.lottie.LottieAnimationView
@@ -20,5 +22,13 @@ class PresentationActivity : AppCompatActivity() {
         logo.animate().translationY(1400f).setDuration(1000).setStartDelay(4000)
         appName.animate().translationY(1400f).setDuration(1000).setStartDelay(4000)
         lottieAnimationView.animate().translationY(1400f).setDuration(1000).setStartDelay(4000)
+
+        Handler().postDelayed(Runnable { //This method will be executed once the timer is over
+            // Start your app main activity
+            val i = Intent(this@PresentationActivity, MainActivity::class.java)
+            startActivity(i)
+            // close this activity
+            finish()
+        }, 6500)
     }
 }
