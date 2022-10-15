@@ -1,0 +1,2 @@
+# SplashScreen and BottomNavigationBar
+## Lottie
